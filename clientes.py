@@ -13,8 +13,8 @@ clientes.append(cl4)
 #Diseñe tres funciones
 #Agregar nuevos clientes
 def agregarCliente():
-    global clientes
-    global nuevaId
+    global clientes #Permite que los metodos interactuen con las variables locales
+    global nuevaId  #Variable que asigna ID correlativo al nuevo cliente agregado
     nombre = input('Ingrese nombre de nuevo cliente: ').capitalize()
     apellido = input('Ingrese apellido de nuevo cliente: ').capitalize()
     edad = int(input('Ingrese edad de nuevo cliente: '))
@@ -25,7 +25,7 @@ def agregarCliente():
 # eliminar clientes según ID
 def eliminarCliente(ide):
     global clientes
-    for x in range(0,len(clientes)):
+    for x in range(0,len(clientes)): #Elimina cliente segun ID entregada como parametro a la funcion
         if clientes[x]["ID"]==ide:
             clientes.pop(x)
     print()
